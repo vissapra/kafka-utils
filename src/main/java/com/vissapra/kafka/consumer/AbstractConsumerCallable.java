@@ -32,7 +32,9 @@ import static java.lang.Boolean.TRUE;
 import static java.time.Instant.now;
 
 /**
- * Created by rvissa200 on 9/13/16.
+ * Abstract Kafka consumer that supports longer operations upon message arrival.
+ * Handles consumer.poll heartbeats until the task is completed.
+ * Once completes, it resumes the poll operations
  */
 
 public abstract class AbstractConsumerCallable<K, V> implements Callable<V> {
